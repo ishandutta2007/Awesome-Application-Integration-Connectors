@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <!-- Glowing Node Gradients -->
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="amber-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+
+    <!-- Text Shimmer / Gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow-blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2937" stroke-width="0.8" opacity="0.6"/>
+    </pattern>
+
+    <style>
+      @keyframes pulseOrb {
+        0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+        50% { transform: scale(1.15) translate(15px, -15px); opacity: 0.65; }
+      }
+      @keyframes dashMove {
+        to { stroke-dashoffset: -120; }
+      }
+      @keyframes pulsePill {
+        0%, 100% { opacity: 0.85; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-3px); }
+      }
+      .ambient-orb-1 {
+        animation: pulseOrb 8s ease-in-out infinite;
+        transform-origin: 200px 150px;
+      }
+      .ambient-orb-2 {
+        animation: pulseOrb 10s ease-in-out infinite reverse;
+        transform-origin: 1000px 250px;
+      }
+      .flow-path {
+        stroke-dasharray: 8 12;
+        animation: dashMove 4s linear infinite;
+      }
+      .pill-animate-1 { animation: pulsePill 3s ease-in-out infinite; }
+      .pill-animate-2 { animation: pulsePill 3.5s ease-in-out infinite 0.5s; }
+      .pill-animate-3 { animation: pulsePill 4s ease-in-out infinite 1s; }
+      .pill-animate-4 { animation: pulsePill 4.5s ease-in-out infinite 1.5s; }
+    </style>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" />
+
+  <!-- Grid overlay in background -->
+  <rect width="1200" height="420" fill="url(#grid)" />
+
+  <!-- Background Dynamic Glowing Orbs -->
+  <circle cx="220" cy="140" r="140" fill="#3b82f6" opacity="0.25" filter="url(#glow-blur)" class="ambient-orb-1" />
+  <circle cx="980" cy="270" r="160" fill="#8b5cf6" opacity="0.22" filter="url(#glow-blur)" class="ambient-orb-2" />
+  <circle cx="600" cy="380" r="110" fill="#ec4899" opacity="0.18" filter="url(#glow-blur)" />
+
+  <!-- Dynamic Animated Integration Flow Lines (Background) -->
+  <g opacity="0.45">
+    <path d="M 50,80 C 300,40 450,160 650,80 C 850,0 1000,100 1150,50" fill="none" stroke="#06b6d4" stroke-width="2" class="flow-path" />
+    <path d="M 50,340 C 250,390 400,260 600,350 C 800,440 950,300 1150,350" fill="none" stroke="#a855f7" stroke-width="2" class="flow-path" style="animation-direction: reverse; animation-duration: 6s;" />
+    <path d="M 100,210 C 350,130 550,290 800,190 C 950,130 1050,220 1150,190" fill="none" stroke="#3b82f6" stroke-width="1.5" class="flow-path" style="animation-duration: 5s;" />
+  </g>
+
+  <!-- Network Circuit Nodes (Background Floating) -->
+  <g opacity="0.4">
+    <circle cx="150" cy="90" r="4" fill="#38bdf8" />
+    <circle cx="420" cy="130" r="5" fill="#818cf8" />
+    <circle cx="830" cy="90" r="4" fill="#f472b6" />
+    <circle cx="1060" cy="115" r="5" fill="#34d399" />
+    <circle cx="200" cy="350" r="4" fill="#a78bfa" />
+    <circle cx="500" cy="310" r="5" fill="#38bdf8" />
+    <circle cx="880" cy="360" r="4" fill="#fbbf24" />
+  </g>
+
+  <!-- Foreground Content: Header Tag, Title, Subtitle, Feature Badges -->
+  <!-- Top Category Tag -->
+  <g transform="translate(600, 75)">
+    <rect x="-140" y="-16" width="280" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+    <circle cx="-116" cy="0" r="5" fill="#10b981" />
+    <text text-anchor="middle" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1.5">
+      CURATED iPaaS &amp; CONNECTORS
+    </text>
+  </g>
+
+  <!-- Main Title in Clear Crisp Foreground -->
+  <text x="600" y="160" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="800" fill="url(#title-grad)" letter-spacing="-0.5">
+    Awesome Application Integration
+  </text>
+
+  <!-- Secondary Title / Tagline -->
+  <text x="600" y="215" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="400" fill="#cbd5e1" letter-spacing="0.2">
+    The Ultimate Landscape of iPaaS, Connectors &amp; Workflow Automation
+  </text>
+
+  <!-- Feature Pills / Badges in Foreground -->
+  <g transform="translate(600, 290)">
+    <!-- Pill 1: Enterprise iPaaS -->
+    <g transform="translate(-360, 0)" class="pill-animate-1">
+      <rect x="-95" y="-18" width="190" height="38" rx="19" fill="#1e293b" stroke="#3b82f6" stroke-width="1.4" opacity="0.95" />
+      <text text-anchor="middle" y="6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#93c5fd">
+        ⚡ Enterprise iPaaS
+      </text>
+    </g>
+
+    <!-- Pill 2: Open-Source Engines -->
+    <g transform="translate(-120, 0)" class="pill-animate-2">
+      <rect x="-105" y="-18" width="210" height="38" rx="19" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.4" opacity="0.95" />
+      <text text-anchor="middle" y="6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#c4b5fd">
+        🔓 Open-Source Engines
+      </text>
+    </g>
+
+    <!-- Pill 3: API & Webhook Connectors -->
+    <g transform="translate(130, 0)" class="pill-animate-3">
+      <rect x="-115" y="-18" width="230" height="38" rx="19" fill="#1e293b" stroke="#ec4899" stroke-width="1.4" opacity="0.95" />
+      <text text-anchor="middle" y="6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#f472b6">
+        🔌 Modular Connectors
+      </text>
+    </g>
+
+    <!-- Pill 4: Pricing Benchmarks -->
+    <g transform="translate(370, 0)" class="pill-animate-4">
+      <rect x="-95" y="-18" width="190" height="38" rx="19" fill="#1e293b" stroke="#10b981" stroke-width="1.4" opacity="0.95" />
+      <text text-anchor="middle" y="6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#6ee7b7">
+        📊 Pricing &amp; Metrics
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <line x1="200" y1="365" x2="1000" y2="365" stroke="#334155" stroke-width="1" stroke-dasharray="6 6" opacity="0.6" />
+</svg>
