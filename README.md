@@ -16,7 +16,7 @@
 
 A curated directory and guide to the best **Application Integration Connectors**, **Integration Platform as a Service (iPaaS)** software, **open-source workflow automation engines**, and **ETL/ELT data orchestration pipelines**.
 
-Whether building mission-critical enterprise ESB microservices, low-code departmental automations, self-hosted fair-code bots, or serverless event-driven API workflows, this reference provides real-world transparent pricing benchmarks, free tier limits, star counts, and architectural features.
+Whether building mission-critical enterprise ESB microservices, low-code departmental automations, self-hosted fair-code bots, or serverless event-driven API workflows, this reference provides real-world transparent pricing benchmarks, free tier limits, Stars_Counts, and architectural features.
 
 ---
 
@@ -59,9 +59,9 @@ The table below catalogs premier commercial SaaS iPaaS solutions and workflow au
 
 For self-hosted, air-gapped, privacy-compliant, or fully customizable architectures.
 
-Sorted in descending order by **GitHub Star Count**:
+Sorted in descending order by **GitHub Stars_Count**:
 
-| Project & Repository | 🌟 GitHub Stars | 📜 License | 🛠️ Architecture & Core Capabilities | 🐳 Self-Hosting & Deployment Footprint |
+| Project & Repository | 🌟 GitHub_Stars | 📜 License | 🛠️ Architecture & Core Capabilities | 🐳 Self-Hosting & Deployment Footprint |
 |---|---|---|---|---|
 | **n8n**<br>[`n8n-io/n8n`](https://github.com/n8n-io/n8n) | [![n8n Stars](https://img.shields.io/github/stars/n8n-io/n8n?style=social&color=white)](https://github.com/n8n-io/n8n/stargazers) | Sustainable Core (Fair-code) | Advanced node-based workflow builder with 400+ prebuilt integrations, built-in LangChain / AI agent nodes, native JavaScript/Python scripting, and webhook trigger listeners. | Official Docker image, Docker Compose, npm, Kubernetes (Helm chart). |
 | **Huginn**<br>[`huginn/huginn`](https://github.com/huginn/huginn) | [![Huginn Stars](https://img.shields.io/github/stars/huginn/huginn?style=social&color=white)](https://github.com/huginn/huginn/stargazers) | MIT License | Autonomous agent framework that creates agents to monitor websites, parse feeds, execute web scraping, inspect data changes, and emit events. | Ruby on Rails stack, Docker container, standalone Linux VM. |
